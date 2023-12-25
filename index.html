@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Location</title>
+</head>
+
+<body>
+
+  <label>neighbourhood:</label>
+  <div style="color:brown; font-size: 25px;" id="neighbourhood"></div>
+
+  <div>
+    <label>country:</label>
+    <div style="color:brown; font-size: 25px;" id="country"></div>
+  </div>
+
+  <div>
+    <label>county:</label>
+    <div style="color:brown; font-size: 25px;" id="county"></div>
+  </div>
+
+  <div>
+    <label>postcode:</label>
+    <div style="color:brown; font-size: 25px;" id="postcode"></div>
+  </div>
+
+  <div>
+    <label>state:</label>
+    <div style="color:brown; font-size: 25px;" id="state"></div>
+  </div>
+
+  <div>
+    <label>town:</label>
+    <div style="color:brown; font-size: 25px;" id="town"></div>
+  </div>
+
+  <div>
+    <label>latitude:</label>
+    <div style="color:brown; font-size: 25px;" id="latitude"></div>
+  </div>
+
+  <div>
+    <label>longitude:</label>
+    <div style="color:brown; font-size: 25px;" id="longitude"></div>
+  </div>
+
+  <script>
+    const neighbourhood = document.getElementById('neighbourhood')
+    const country = document.getElementById('country')
+    const county = document.getElementById('county')
+    const postcode = document.getElementById('postcode')
+    const state = document.getElementById('state')
+    const town = document.getElementById('town')
+    const latitudes = document.getElementById('latitude')
+    const longitudes = document.getElementById('longitude')
+
+    function initMap(latitude, longitude) {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+          const { latitude, longitude } = position.coords;
+          const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
+          const loc = await fetch(url).then(res => res.json())
+          console.log(loc);
+          latitudes.innerHTML = latitude
+          longitudes.innerHTML = longitude
+          console.log(latitude);
+          neighbourhood.innerHTML = loc.address.neighbourhood
+          country.innerHTML = loc.address.country
+          county.innerHTML = loc.address.county
+          postcode.innerHTML = loc.address.postcode
+          state.innerHTML = loc.address.state
+          town.innerHTML = loc.address.town
+          
+        },
+          (error) => {
+            console.error("Error getting location:", error.message);
+          }
+        );
+      } else {
+        console.error("Geolocation is not supported by your browser");
+      }
+    }
+    initMap();
+  </script>
+</body>
+
+</html>
