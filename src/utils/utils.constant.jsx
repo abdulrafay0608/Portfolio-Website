@@ -159,3 +159,12 @@ export const contactsInfo = [
     icon: <FaGithub className="text-4xl" />,
   },
 ];
+
+
+export const navItems = [
+  { title: "About", path: "#about" },
+  { title: "Services", path: "#services" },
+  { title: "Skills", path: "#skills" },
+  { title: "Projects", path: "#projects" },
+  { title: "Contact", path: "#contact" },
+];

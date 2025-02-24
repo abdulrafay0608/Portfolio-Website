@@ -1,4 +1,3 @@
-// Contact.jsx
 import React from "react";
 import SectionHeading from "../../ui-components/SectionHeading";
 import ContactForm from "./ContactForm";
@@ -11,11 +10,9 @@ const Contact = () => {
         <SectionHeading title="Get in Touch" />
 
         <div className="md:flex items-center gap-16 max-w-screen-lg mx-auto">
-          {/* Contact Form */}
           <div className="md:w-full md:order-1">
             <ContactForm />
           </div>
-          {/* Social Media Links */}
           <div className="md:w-1/2 space-y-4 flex flex-col md:order-2 md:mt-0 mt-8">
             {contactsInfo.map((contact, index) => (
               <a

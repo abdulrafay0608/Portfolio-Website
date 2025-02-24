@@ -6,22 +6,20 @@ import Badge from "../../ui-components/Badge";
 import TaglineBadge from "../../ui-components/TaglineBadge";
 import TextParagraph from "../../ui-components/TextParagraph";
 
-//className="bg-gray-900 text-white"
 const Hero = () => {
   return (
     <section id="home" className="relative">
-      <div className="min-h-[90vh] max-w-screen-xl mx-3 md:mx-auto md:px-8 md:flex items-center ">
+      <div className="md:min-h-[90vh] max-w-screen-xl px-2 py-16 md:mx-auto md:px-8 md:flex items-center">
         <div
           data-aos="fade-left"
           data-aos-duration="1000"
-          className="flex-none space-y-6 max-w-xl md:mt-0 mt-12"
+          className="flex-1 space-y-6 max-w-xl"
         >
           <Badge
             icon={"✨"}
             text="Welcome to My Portfolio"
             className="px-2 py-1.5"
           />
-          {/* Main Heading */}
           <div>
             <h1 className="relative inline-block text-3xl sm:text-4xl md:text-5xl font-bold">
               Abdul Rafay
@@ -29,7 +27,6 @@ const Hero = () => {
             </h1>
           </div>
 
-          {/* Typing Animation */}
           <TypingAnimation />
 
           <TaglineBadge
@@ -42,7 +39,7 @@ const Hero = () => {
             on creating seamless user experiences with modern tech stack. Let's
             build something extraordinary together!
           </TextParagraph>
-          <div className="flex flex-col sm:flex-row gap-3 mt-6">
+          <div className="flex flex-row gap-3 my-6">
             <CustomButton
               label="View Project"
               href={"#projects"}
@@ -61,7 +58,7 @@ const Hero = () => {
         <div
           data-aos="fade-right"
           data-aos-duration="1000"
-          className="flex-1 hidden md:block relative"
+          className="flex-none hidden md:block relative"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl blur-2xl"></div>
           <Tilt tiltAngleYInitial={250}>

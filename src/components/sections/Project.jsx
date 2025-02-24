@@ -18,7 +18,6 @@ const Project = () => {
                 data-aos="fade-up"
                 className="min-h-[50vh] flex flex-col md:flex-row items-center gap-8 p-6 border border-slate-800 shadow-2xl hover:shadow-slate-800 dark:bg-gray-800 rounded-2xl transition-all hover:shadow-2xl"
               >
-                {/* Image Section */}
                 <div className={`w-full md:w-1/2 ${i % 2 === 0 && "order-1"}`}>
                   <Tilt tiltAngleYInitial={i % 2 === 0 ? 250 : -250}>
                     <img
@@ -28,7 +27,6 @@ const Project = () => {
                     />
                   </Tilt>
                 </div>
-                {/* Text Section */}
                 <div className={`md:w-1/2 space-y-4`}>
                   <SectionHeading title={pro.title} />
                   <TextParagraph>{pro.description}</TextParagraph>

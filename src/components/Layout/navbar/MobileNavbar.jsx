@@ -1,13 +1,6 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-const navItems = [
-  { title: "About", path: "#about" },
-  { title: "Careers", path: "#careers" },
-  { title: "History", path: "#history" },
-  { title: "Services", path: "#services" },
-  { title: "Projects", path: "#projects" },
-  { title: "Blog", path: "#blog" },
-];
+import { navItems } from "../../../utils/utils.constant";
+
 const MobileNavbar = ({ setIsOpen, isOpen }) => {
   return (
     <div
@@ -15,12 +8,10 @@ const MobileNavbar = ({ setIsOpen, isOpen }) => {
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
-      {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black opacity-50"
         onClick={() => setIsOpen(false)}
       ></div>
-      {/* Mobile Menu Panel */}
       <div className="relative ml-auto w-full min-h-screen  bg-slate-950 p-6">
         <button
           onClick={() => setIsOpen(false)}

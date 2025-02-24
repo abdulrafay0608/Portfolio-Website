@@ -1,4 +1,3 @@
-// InputField.jsx
 import React from "react";
 
 const InputField = ({
@@ -9,7 +8,7 @@ const InputField = ({
   placeholder,
   required = false,
   className = "",
-  error, // error message to display
+  error,
   ...props
 }) => {
   return (
