@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Loader from "../../ui-components/Loader";
 import CursorEffect from "../../ui-components/CursorEffect";
+import { Toaster } from "react-hot-toast";
 
 const Layout = () => {
   const [loading, setLoading] = useState(true);
@@ -21,6 +22,7 @@ const Layout = () => {
   }
   return (
     <div className="mx-1">
+      <Toaster position="bottom-right" />
       <CursorEffect />
       <Navbar />
       <Main />

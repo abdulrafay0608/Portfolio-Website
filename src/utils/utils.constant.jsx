@@ -60,15 +60,6 @@ export const skills = [
 
 export const projects = [
   {
-    title: "Pass Protector",
-    description:
-      "PassProtector is an innovative application designed to securely store user credentials, helping users manage and protect their usernames and passwords. Given the frequent issue of users forgetting their login details after signing up on various websites and apps, PassProtector offers a reliable solution to this problem.",
-    technologies: ["React + Vite.js", "Tailwind CSS", "Local Storage"],
-    image: "/assets/pass.png",
-    liveDemo: "https://rafay-passprotector.vercel.app/",
-    codeLink: "https://github.com/abdulrafay0608/Password-Manager",
-  },
-  {
     title: "Sidcup Family Golf Clone",
     description:
       "In this project, I recreated the engaging landing page for Sidcup Family Golf, a multi-purpose golf facility in London. Using HTML, CSS, and JavaScript, I faithfully replicated the original design and interactive elements.",
@@ -123,6 +114,15 @@ export const projects = [
     codeLink: "https://github.com/abdulrafay0608/Online-Shoes-Store",
   },
   {
+    title: "Pass Protector",
+    description:
+      "PassProtector is an innovative application designed to securely store user credentials, helping users manage and protect their usernames and passwords. Given the frequent issue of users forgetting their login details after signing up on various websites and apps, PassProtector offers a reliable solution to this problem.",
+    technologies: ["React + Vite.js", "Tailwind CSS", "Local Storage"],
+    image: "/assets/pass.png",
+    liveDemo: "https://rafay-passprotector.vercel.app/",
+    codeLink: "https://github.com/abdulrafay0608/Password-Manager",
+  },
+  {
     title: "Amazon Clone",
     description:
       "Recreated an Amazon e-commerce platform using HTML and CSS to enhance front-end skills and display proficiency in building visually appealing websites.",
@@ -142,7 +142,7 @@ export const contactsInfo = [
   },
   {
     name: "Email",
-    href: "mailto:mailto:abdulrafay0608@gmail.com",
+    href: "mailto:abdulrafay0608@gmail.com",
     username: "abdulrafay0608@gmail.com",
     icon: <FaEnvelope className="text-4xl" />,
   },
@@ -160,10 +160,9 @@ export const contactsInfo = [
   },
 ];
 
-
 export const navItems = [
   { title: "About", path: "#about" },
-  { title: "Services", path: "#services" },
+  // { title: "Services", path: "#services" },
   { title: "Skills", path: "#skills" },
   { title: "Projects", path: "#projects" },
   { title: "Contact", path: "#contact" },

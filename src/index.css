@@ -1,16 +1,15 @@
 @import "tailwindcss";
+@plugin 'tailwind-scrollbar';
 
 @theme {
   --default-font-family: "Poppins", sans-serif;
   --color-primary: #f8fafc;
   --color-secondary: #cbd5e1;
-
 }
 
 html,
 body {
-  scroll-behavior: smooth;
-  @apply bg-slate-950 text-slate-50
+  @apply bg-slate-950 text-slate-50 scroll-smooth
 }
 
 @layer utilities {

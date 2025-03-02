@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import InputField from "../../ui-components/InputField";
 import CustomButton from "../../ui-components/CustomButton";
+import { Api } from "../../utils/utils.api";
+import toast from "react-hot-toast";
 
 const ContactForm = () => {
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Form submitted", data);
+  const onSubmit = async (data) => {
+    try {
+      setLoading(true);
+      const resp = await Api.post("/send-email", data);
+      toast.success(resp?.data?.message);
+      reset();
+    } catch (error) {
+      toast.error(error?.message || "Something went wrong!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -71,9 +84,10 @@ const ContactForm = () => {
       </div>
       <CustomButton
         type="submit"
-        label="Send Message"
+        label={loading ? "Send Message..." : "Send Message"}
         variant="filled"
         extraClasses="px-6 py-3 text-sm"
+        disabled={loading}
       />
     </form>
   );
